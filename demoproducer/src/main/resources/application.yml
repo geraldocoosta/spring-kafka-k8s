@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-producer-service
+  cloud:
+    kubernetes:
+      loadbalancer:
+        mode: service
+      discovery:
+        all-namespaces: true
+        discovery-server-url: spring-cloud-kubernetes-discoveryserver:80
+      config:
+        namespace: spring-consumer
+        sources:
+         - name: spring-consumer
+  kafka:
+    producer:
+      bootstrap-servers:
+      - kafka-0-internal.confluent:9092
+      
+        

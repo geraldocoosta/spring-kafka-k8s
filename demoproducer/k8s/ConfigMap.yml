@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: teste-producer
+  namespace: spring-producer
+data:
+  application.yml: |-
+    spring:
+      application:
+        name: spring-producer-service
+      cloud:
+        kubernetes:
+          loadbalancer:
+            mode: service
+          discovery:
+            all-namespaces: true
+            discovery-server-url: spring-cloud-kubernetes-discoveryserver:80
+          config:
+            namespace: spring-consumer
+            sources:
+             - name: spring-consumer
+  
+

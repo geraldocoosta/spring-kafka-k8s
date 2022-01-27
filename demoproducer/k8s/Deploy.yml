@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-producer
+  namespace: spring-producer
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-producer
+  template:
+    metadata:
+      labels:
+        app: spring-producer
+    spec:
+      containers:
+        - name: spring-producer
+          image: geraldocoosta/spring-k8s-kafka:latest
+          ports:
+            - containerPort: 8080

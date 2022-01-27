@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-consumer
+  namespace: spring-consumer
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-consumer
+  template:
+    metadata:
+      labels:
+        app: spring-consumer
+    spec:
+      containers:
+        - name: spring-consumer
+          image: geraldocoosta/spring-k8s-kafka-consumer:latest
+          ports:
+            - containerPort: 8080

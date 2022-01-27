@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-producer-service
+  namespace: spring-producer
+spec:
+  selector:
+    app: spring-producer
+  ports:
+  - port: 80
+    targetPort: 8080

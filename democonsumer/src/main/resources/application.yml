@@ -1,0 +1,30 @@
+
+spring:
+  application:
+    name: spring-consumer-service
+  cloud:
+   kubernetes:
+    loadbalancer:
+      mode: service
+    discovery:
+      all-namespaces: true
+      discovery-server-url: spring-cloud-kubernetes-discoveryserver:80
+    config:
+      namespace: spring-producer
+      sources:
+       - name: teste-producer
+  kafka:
+    template:
+      default-topic: teste
+    consumer:
+      bootstrap-servers: 
+      - kafka-1-internal.confluent:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      
+      
+      
+      
+      
