@@ -2,7 +2,7 @@ Para rodar
 
 
 Instalar o KIND -> https://kind.sigs.k8s.io/
-Criar um cluster k8s
+Criar um cluster k8s, pode ser com um ou mais nós
 setar o cluster
 
 Criar o discovery server do spring no k8s com isso -> https://docs.spring.io/spring-cloud-kubernetes/docs/current/reference/html/#deployment-yaml-3
